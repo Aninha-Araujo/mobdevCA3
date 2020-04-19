@@ -1,15 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { ApiService } from '../../services/api.service';
 @Component({
-  selector: 'app-quote-details',
-  templateUrl: './quote-details.page.html',
-  styleUrls: ['./quote-details.page.scss'],
+  selector: 'app-quotes',
+  templateUrl: './quotes.page.html',
+  styleUrls: ['./quotes.page.scss'],
 })
-export class QuoteDetailsPage implements OnInit {
 
-  constructor() { }
+export class QuotesPage implements OnInit {
 
+    quotes: Observable<any>;
+
+    constructor(private router: Router, private api: ApiService) { }
+  
   ngOnInit() {
+      this.quotes = this.api.getQuotes();
+      this.quotes.subscribe(data => {console.log('my data: ',data);
+    
+    });
   }
-
+  openDetail(deaths){
+      let quotes_author = name;
+      this.router.navigateByUrl('/tabs/quotes/${quotesAuthor}');
+  }
 }

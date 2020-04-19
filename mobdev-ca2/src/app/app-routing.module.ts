@@ -1,47 +1,70 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
-  {
-    path: 'tabs',
-    loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
-  },
-  {
-    path: 'characters',
-    loadChildren: () => import('./pages/characters/characters.module').then( m => m.CharactersPageModule)
-  },
-  {
-    path: 'character-details',
-    loadChildren: () => import('./pages/character-details/character-details.module').then( m => m.CharacterDetailsPageModule)
-  },
-  {
-    path: 'episodes',
-    loadChildren: () => import('./pages/episodes/episodes.module').then( m => m.EpisodesPageModule)
-  },
-  {
-    path: 'episode-details',
-    loadChildren: () => import('./pages/episode-details/episode-details.module').then( m => m.EpisodeDetailsPageModule)
-  },
-  {
-    path: 'quotes',
-    loadChildren: () => import('./pages/quotes/quotes.module').then( m => m.QuotesPageModule)
-  },
-  {
-    path: 'quote-details',
-    loadChildren: () => import('./pages/quote-details/quote-details.module').then( m => m.QuoteDetailsPageModule)
-  },
-  {
-    path: 'deaths',
-    loadChildren: () => import('./pages/deaths/deaths.module').then( m => m.DeathsPageModule)
-  },
+    {
+        path: 'tabs',
+        component: TabsPage,
+        children: [
+            {
+                path: 'episodes',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: () => import('../episodes/episodes.module').then(m => m.EpisodesPageModule)
+                    },
+                    {
+                        path: ':id',
+                        loadChildren: () => import('../episode-details/episode-details.module').then(m => m.EpisodeDetailsPageModule)
+                    }
+                ]
+            },
+            {
+                path: 'characters',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: () => import('../characters/characters.module').then(m => m.CharactersPageModule)
+                    },
+                    {
+                        path: ':id',
+                        loadChildren: () => import('../character-details/character-details.module').then(m => m.CharacterDetailsPageModule)
+                    }
+                ]
+            },
+            {
+                path: 'quotes',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: () => import('../quotes/quotes.module').then(m => m.QuotesPageModule)
+                    },
+                    {
+                        path: ':id',
+                        loadChildren: () => import('../quote-details/quote-details.module').then(m => m.QuoteDetailsPageModule)
+                    }
+                ]
+            },
+            {
+                path: 'deaths',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: () => import('../deaths/deaths.module').then(m => m.DeathsPageModule)
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        path: '',
+        redirectTo: '/tabs/episodes',
+        pathMatch: 'full'
+    }
 ];
-
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
-  exports: [RouterModule]
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class TabsPageRoutingModule { }
