@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { ApiService } from '../../sevices/api.service';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-quotes',
