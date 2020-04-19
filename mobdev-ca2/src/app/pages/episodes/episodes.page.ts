@@ -20,8 +20,8 @@ export class EpisodesPage implements OnInit {
     });
   }
 
-  openDetail(episode){
-      let episodeId = episode.episode_id;
-      this.router.navigateByUrl('/tabs/episodes/${episodeId}');
+  openDetails(episode){
+      //let episodeId = episode.episode_id;
+      this.router.navigateByUrl('/tabs/episodes/${id}');
   }
 }
