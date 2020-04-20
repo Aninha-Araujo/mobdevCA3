@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-quote-details',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuoteDetailsPage implements OnInit {
 
-  constructor() { }
+    quote: Observable<any>;
+    quoteId = null;
 
-  ngOnInit() {
-  }
+    constructor(private activatedRoute: ActivatedRoute,
+        private api: ApiService) { }
 
+    ngOnInit() {
+        this.quoteId = this.activatedRoute.snapshot.paramMap.get('id');
+        this.api.getQuote(this.quoteId).subscribe(res => {
+            this.quote = res[0];
+            console.log(JSON.stringify(this.quoteId.quote_id));
+        });
+    }
 }
