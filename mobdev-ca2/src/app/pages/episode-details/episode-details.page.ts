@@ -9,37 +9,37 @@ import { ApiService } from '../../services/api.service';
     selector: 'app-episode-details',
     templateUrl: './episode-details.page.html',
     styleUrls: ['./episode-details.page.scss'],
-// templateUrl: 'film-details.html',  ???
+    // templateUrl: 'film-details.html',  ???
 
 })
 export class EpisodeDetailsPage implements OnInit {
 
     episode: Observable<any>;
     episodeId = null;
-//isFavorite = false;
+    router: any;
+    //isFavorite = false;
 
-    constructor(private activatedRoute: ActivatedRoute,
-        private api: ApiService) { }
+    constructor(private activatedRoute: ActivatedRoute, private api: ApiService) { }
 
-/*  constructor(public navCtrl: NavController, public favoriteProvider: FavoriteProvider, public navParams: NavParams, private emailComposer: EmailComposer) {
-    this.film = this.navParams.get('film');
-    this.favoriteProvider.isFavorite(this.film.episode_id).then(isFav => {
-      this.isFavorite = isFav;
-    })
-  }
- 
-  favoriteFilm() {
-    this.favoriteProvider.favoriteFilm(this.film.episode_id).then(() => {
-      this.isFavorite = true;
-    });
-  }
- 
-  unfavoriteFilm() {
-    this.favoriteProvider.unfavoriteFilm(this.film.episode_id).then(() => {
-      this.isFavorite = false;
-    });
-  }
-*/
+    /*  constructor(public navCtrl: NavController, public favoriteProvider: FavoriteProvider, public navParams: NavParams, private emailComposer: EmailComposer) {
+        this.film = this.navParams.get('film');
+        this.favoriteProvider.isFavorite(this.film.episode_id).then(isFav => {
+          this.isFavorite = isFav;
+        })
+      }
+     
+      favoriteFilm() {
+        this.favoriteProvider.favoriteFilm(this.film.episode_id).then(() => {
+          this.isFavorite = true;
+        });
+      }
+     
+      unfavoriteFilm() {
+        this.favoriteProvider.unfavoriteFilm(this.film.episode_id).then(() => {
+          this.isFavorite = false;
+        });
+      }
+    */
     ngOnInit() {
         this.episodeId = this.activatedRoute.snapshot.paramMap.get('id');
         this.api.getEpisode(this.episodeId).subscribe(res => {
@@ -47,5 +47,11 @@ export class EpisodeDetailsPage implements OnInit {
             console.log(JSON.stringify(this.episodeId.episode_id));
         });
     }
+
+    openDetails(episode) {
+        
+        this.router.navigateByUrl('/tabs/episodes');
+    }
 }
+
 

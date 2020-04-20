@@ -15,19 +15,23 @@
 
 <ion-content padding>
 
-	<ion-card>
-		<ion-card-header>Episode {{ episode.season }}: {{ episode.title }}</ion-card-header>
-		<ion-card-content>
+	<ion-card *ngFor="let episode of episodes">
 
+          
+		<ion-card-header> 
+        <!--Episode {{ episode.season }}: {{ episode.title }}</ion-card-header>
+		<ion-card-content>
+-->
 			<ion-item class="movie-info" lines="none">
 				<ion-icon name="people" slot="start"></ion-icon>
 				Characters: {{ episode.characters }}
 			</ion-item>
-
+        
 			<ion-item class="movie-info" lines="none">
 				<ion-icon name="calendar" slot="start"></ion-icon>
 				Release Date: {{ episode.air_date | date }}
 			</ion-item>
+           
 	</ion-card>
 
     
@@ -48,6 +52,15 @@
 				Release Date: {{ episode.air_date | date }}
 			</ion-item>
 	</ion-card>
+
+
+  <ion-list>
+        <ion-item button detail lines="inset" *ngFor="let episode of episodes | async" (click)="openDetails(episode)">
+        {{ episode.title}}
+        </ion-item>
+    </ion-list>
+
+
 
     -->
 </ion-content>
