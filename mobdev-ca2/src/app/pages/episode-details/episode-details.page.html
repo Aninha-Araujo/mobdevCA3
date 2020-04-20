@@ -4,12 +4,7 @@
     <ion-buttons slot="start">
 
       <ion-back-button defaulthref="/tabs/episodes"></ion-back-button>
-<!--
-    
-<button ion-button icon-only (click)="unfavoriteFilm()" *ngIf="isFavorite"><ion-icon name="star"></ion-icon></button>
-<button ion-button icon-only (click)="favoriteFilm()" *ngIf="!isFavorite"><ion-icon name="star-outline"></ion-icon></button>
 
--->
     </ion-buttons>
 
     <ion-title>Episode Details</ion-title>
@@ -17,16 +12,42 @@
 
 </ion-header>
 
+
 <ion-content padding>
 
+	<ion-card>
+		<ion-card-header>Episode {{ episode.season }}: {{ episode.title }}</ion-card-header>
+		<ion-card-content>
+
+			<ion-item class="movie-info" lines="none">
+				<ion-icon name="people" slot="start"></ion-icon>
+				Characters: {{ episode.characters }}
+			</ion-item>
+
+			<ion-item class="movie-info" lines="none">
+				<ion-icon name="calendar" slot="start"></ion-icon>
+				Release Date: {{ episode.air_date | date }}
+			</ion-item>
+	</ion-card>
+
+    
 
 
-<!-- <ion-card>
-    <ion-card-content>
-      {{ episode.episode }}
-    </ion-card-content>
-  </ion-card>
--->
 
+<!--	<ion-card>
+		<ion-card-header>Episode {{ episode.season }}: {{ episode.title }}</ion-card-header>
+		<ion-card-content>
 
+			<ion-item class="movie-info" lines="none">
+				<ion-icon name="people" slot="start"></ion-icon>
+				Characters: {{ episode.characters }}
+			</ion-item>
+
+			<ion-item class="movie-info" lines="none">
+				<ion-icon name="calendar" slot="start"></ion-icon>
+				Release Date: {{ episode.air_date | date }}
+			</ion-item>
+	</ion-card>
+
+    -->
 </ion-content>
