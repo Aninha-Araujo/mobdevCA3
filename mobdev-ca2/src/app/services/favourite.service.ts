@@ -1,22 +1,27 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
-
  
-const STORAGE_KEY = 'favoriteEpisode';
+const STORAGE_KEY = 'favouriteEpisodes';
  
-@Injectable()
-export class FavoriteProvider {
+@Injectable({
+  providedIn: 'root'
+})
+export class FavouriteService {
  
-  constructor(public storage: Storage) { }
+  constructor(private storage: Storage) { }
  
-  isFavorite(episodeId) {
-    return this.getAllFavoriteEpisode().then(result => {
+  getAllFavouriteEpisodes() {
+    return this.storage.get(STORAGE_KEY);
+  }
+ 
+  isFavourite(episodeId) {
+    return this.getAllFavouriteEpisodes().then(result => {
       return result && result.indexOf(episodeId) !== -1;
     });
   }
  
-  favoriteEpisode(episodeId) {
-    return this.getAllFavoriteEpisode().then(result => {
+  favouriteEpisode(episodeId) {
+    return this.getAllFavouriteEpisodes().then(result => {
       if (result) {
         result.push(episodeId);
         return this.storage.set(STORAGE_KEY, result);
@@ -26,18 +31,14 @@ export class FavoriteProvider {
     });
   }
  
-  unfavoriteEpisode(episodeId) {
-    return this.getAllFavoriteEpisode().then(result => {
+  unfavouriteEpisode(episodeId) {
+    return this.getAllFavouriteEpisodes().then(result => {
       if (result) {
         var index = result.indexOf(episodeId);
         result.splice(index, 1);
         return this.storage.set(STORAGE_KEY, result);
       }
     });
-  }
- 
-  getAllFavoriteEpisode() {
-    return this.storage.get(STORAGE_KEY);
   }
  
 }
