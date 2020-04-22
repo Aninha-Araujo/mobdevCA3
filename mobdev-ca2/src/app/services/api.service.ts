@@ -6,25 +6,25 @@ import { HttpClient } from '@angular/common/http';
 export class ApiService {
     constructor(private http: HttpClient) { }
     getEpisodes() {
-        return this.http.get('https://8100-e197f891-bff0-4c6d-a3c7-d99e04e593e8.ws-eu01.gitpod.io/assets/episodes.json')
+        return this.http.get('https://8100-d59fc08e-80cb-4c95-b4c9-96e1d7d31aa5.ws-eu01.gitpod.io/assets/episodes.json')
     }
     getEpisode(id) {
-        return this.http.get('https://8100-af287837-f97f-4d02-b72c-dc4087fbbf89.ws-eu01.gitpod.io/assets/episodes.json/${id}');
+        return this.http.get(`https://breakingbadapi.com/api/episodes/${id}`);
     }
     getCharacters() {
-        return this.http.get('https://8100-af287837-f97f-4d02-b72c-dc4087fbbf89.ws-eu01.gitpod.io/assets/characters.json')
+        return this.http.get('https://8100-d59fc08e-80cb-4c95-b4c9-96e1d7d31aa5.ws-eu01.gitpod.io/assets/characters.json')
     }
     getCharacter(id) {
-        return this.http.get('https://8100-af287837-f97f-4d02-b72c-dc4087fbbf89.ws-eu01.gitpod.io/assets/characters/.json/${id}');
+        return this.http.get(`https://8100-d59fc08e-80cb-4c95-b4c9-96e1d7d31aa5.ws-eu01.gitpod.io/assets/characters/.json/${id}`);
     }
     getQuotes() {
-        return this.http.get('https://8100-af287837-f97f-4d02-b72c-dc4087fbbf89.ws-eu01.gitpod.io/assets/quotes.json')
+        return this.http.get('https://8100-d59fc08e-80cb-4c95-b4c9-96e1d7d31aa5.ws-eu01.gitpod.io/assets/quotes.json')
     }
     getQuote(id) {
-        return this.http.get('https://8100-af287837-f97f-4d02-b72c-dc4087fbbf89.ws-eu01.gitpod.io/assets/quotes/.json/${id}');
+        return this.http.get(`https://8100-d59fc08e-80cb-4c95-b4c9-96e1d7d31aa5.ws-eu01.gitpod.io/assets/quotes/.json/${id}`);
     }
     getDeaths() {
-        return this.http.get('https://8100-af287837-f97f-4d02-b72c-dc4087fbbf89.ws-eu01.gitpod.io/assets/deaths.json')
+        return this.http.get('https://8https://8100-d59fc08e-80cb-4c95-b4c9-96e1d7d31aa5.ws-eu01.gitpod.io/assets/deaths.json')
     }
 }
 

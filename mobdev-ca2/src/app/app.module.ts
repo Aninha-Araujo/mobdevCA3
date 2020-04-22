@@ -10,10 +10,18 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
+import { NavController, NavParams } from '@ionic/angular';
+//import { FavoriteProvider } from './../providers/favorite/favorite';
+import { IonicStorageModule } from '@ionic/storage';
+import { FavoriteProvider } from './services/favorite.service';
+//import { FavoriteServicePage } from './pages/episode-details/episode-details.page';
+//favorite bottom
+//import { FavoriteService } from '../../services/favorite.service';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,IonicStorageModule,FavoriteProvider],
   providers: [
     StatusBar,
     SplashScreen,

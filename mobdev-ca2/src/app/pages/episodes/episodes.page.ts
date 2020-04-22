@@ -16,13 +16,13 @@ export class EpisodesPage implements OnInit {
   
   ngOnInit() {
       this.episodes = this.api.getEpisodes();
-    //  this.episodes.subscribe(data => {
-    //      console.log('my episodes: ',data);
-    // });
+      this.episodes.subscribe(data => {
+         console.log('my episodes: ',data);
+     });
   }
 
   openDetails(episode){
       let episodeId = episode.episode_id;
-      this.router.navigateByUrl('/tabs/episodes/${episodeId}');
+      this.router.navigateByUrl(`/tabs/episodes/${episodeId}`);
   }
 }
