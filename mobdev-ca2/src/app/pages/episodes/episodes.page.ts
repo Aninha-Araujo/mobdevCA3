@@ -13,14 +13,7 @@ export class EpisodesPage implements OnInit {
   episodes: Observable<any>;
 
   constructor(private router: Router, private api: ApiService) { }
- /*
- 
-     ngOnInit() {
-        this.episodeId = this.activatedRoute.snapshot.paramMap.get('id');
-        this.api.getEpisode(this.episodeId).subscribe(res => {
-            this.episode = res[0];
-        })
- */
+
   ngOnInit() {
       this.episodes = this.api.getEpisodes();
       this.episodes.subscribe(data => {
@@ -30,10 +23,7 @@ export class EpisodesPage implements OnInit {
 openDetails(episode) {
       let episodeId = episode.episode_id;  
     this.router.navigateByUrl(`/tabs/episodes/${episodeId}`);
-    //console.log('my dataEpisodeDetails: ', episodeId);
+    
     }
-  /*openDetails(episode){
-      let episodeId = episode.episode_id;
-      this.router.navigateByUrl(`/tabs/episodes/${episodeId}`);
-  }*/
+
 }

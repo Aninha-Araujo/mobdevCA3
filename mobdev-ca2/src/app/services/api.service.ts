@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
     providedIn: 'root'
 })
 export class ApiService {
+    
     constructor(private http: HttpClient) { }
     getEpisodes() {
         return this.http.get('https://breakingbadapi.com/api/episodes');
@@ -27,4 +28,4 @@ export class ApiService {
         return this.http.get('https://breakingbadapi.com/api/deaths');
     }
 }
-
+    

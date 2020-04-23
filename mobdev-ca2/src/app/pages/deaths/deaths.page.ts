@@ -15,9 +15,9 @@ export class DeathsPage implements OnInit {
     constructor(private router: Router, private api: ApiService) { }
   
   ngOnInit() {
-      this.deaths = this.api.getDeaths();
-      this.deaths.subscribe(data => {console.log('my data: ',data);
-    
+       this.deaths = this.api.getDeaths();
+      this.deaths.subscribe(data => {
+         console.log('my deaths: ',data);
     });
   }
   openDetail(deaths){
