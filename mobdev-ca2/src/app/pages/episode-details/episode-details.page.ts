@@ -23,13 +23,13 @@ export class EpisodeDetailsPage implements OnInit {
         this.episodeId = this.activatedRoute.snapshot.paramMap.get('id');
         this.api.getEpisode(this.episodeId).subscribe(res => {
             this.episode = res[0];
-        })
+        });
 
 
 
         this.favouriteService.isFavourite(this.episodeId).then(isFav => {
             this.isFavourite = isFav;
-        })
+        });
     }
 
 
@@ -37,13 +37,13 @@ export class EpisodeDetailsPage implements OnInit {
     favouriteEpisode() {
         this.favouriteService.favouriteEpisode(this.episodeId).then(() => {
             this.isFavourite = true;
-        })
+        });
     }
 
     unfavouriteEpisode() {
         this.favouriteService.unfavouriteEpisode(this.episodeId).then(() => {
             this.isFavourite = false;
-        })
+        });
     }
 	
 
