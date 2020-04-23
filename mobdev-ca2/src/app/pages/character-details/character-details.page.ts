@@ -22,5 +22,6 @@ export class CharacterDetailsPage implements OnInit {
             //console.log(JSON.stringify(this.characterId.id));
         });
     }
+    
 }
 

@@ -4,6 +4,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 
+
+
+
+
+
 @Component({
     selector: 'app-episode-details',
     templateUrl: './episode-details.page.html',
@@ -14,11 +19,13 @@ export class EpisodeDetailsPage implements OnInit {
     episode: any;
     isFavourite = false;
     episodeId = null;
-
+    
+ 
 
     constructor(private activatedRoute: ActivatedRoute,
         private api: ApiService,
-        private favouriteService: FavouriteService) { }
+        private favouriteService: FavouriteService,
+        ) { }
 
     ngOnInit() {
         this.episodeId = this.activatedRoute.snapshot.paramMap.get('id');
@@ -46,7 +53,8 @@ export class EpisodeDetailsPage implements OnInit {
             this.isFavourite = false; //nao esquecer desse ;
         });
     }
-	
+     
+    
 }
 
 
