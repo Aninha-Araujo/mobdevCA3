@@ -15,7 +15,7 @@ export class ApiService {
         return this.http.get('https://8100-d59fc08e-80cb-4c95-b4c9-96e1d7d31aa5.ws-eu01.gitpod.io/assets/characters.json')
     }
     getCharacter(id) {
-        return this.http.get(`https://8100-d59fc08e-80cb-4c95-b4c9-96e1d7d31aa5.ws-eu01.gitpod.io/assets/characters/.json/${id}`);
+        return this.http.get(`https://breakingbadapi.com/api/characters/${id}`);
     }
     getQuotes() {
         return this.http.get('https://8100-d59fc08e-80cb-4c95-b4c9-96e1d7d31aa5.ws-eu01.gitpod.io/assets/quotes.json')
