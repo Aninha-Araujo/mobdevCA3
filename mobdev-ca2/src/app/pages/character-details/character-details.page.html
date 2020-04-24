@@ -6,20 +6,50 @@
     </ion-buttons>
 
     <ion-title>Character Details</ion-title>
-
+<!--
+    <ion-buttons slot="end">
+      <ion-button (click)="unfavouriteepisode()" *ngIf="isFavourite">
+        <ion-icon name="star" slot="icon-only" color="secondary"></ion-icon>
+      </ion-button>
+      <ion-button (click)="favouriteepisode()" *ngIf="!isFavourite">
+        <ion-icon name="star-outline" slot="icon-only" color="secondary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+-->
   </ion-toolbar>
 </ion-header>
 
 
-
 <ion-content class="ion-padding">
-
-   
-             
-   <img [src] ="character.img" style="background: #f2f2f2;">
-
+  <ion-card *ngIf="Character" class="movie-card">
+  
  
+    <ion-card-header color="primary">Character {{ character.nome }}: {{ character.occupation }}</ion-card-header>
+   
+        <ion-card-content>
 
 
 
+            <ion-item class="movie-info" lines="none">
+                <ion-icon name="people" slot="start">
+                </ion-icon>
+                    Character: {{ character.name }}
+            </ion-item>
+
+            <ion-item class="movie-info" lines="none">
+                <ion-icon name="people" slot="start">
+                </ion-icon>
+                    Character: {{ character.nickname }}
+            </ion-item>
+        
+            <!--
+                <img [src] ="character.img" style="background: #f2f2f2;">
+            -->
+
+
+    
+        
+
+    </ion-card-content>
+    </ion-card>
 </ion-content>

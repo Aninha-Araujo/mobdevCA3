@@ -21,9 +21,9 @@ export class QuotesPage implements OnInit {
     });
   }
 
-  openDetails(quote){
+  /*openDetails(quote){
       let quoteId = quote.quote_id;
       this.router.navigateByUrl(`/tabs/quotes/${quoteId}`);
-  }
+  }*/
 }
 

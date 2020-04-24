@@ -11,16 +11,18 @@ export class CharacterDetailsPage implements OnInit {
 
     character: any;
     characterId = null;
-
+    isFavourite = false;
+    
     constructor(private activatedRoute: ActivatedRoute,
-        private api: ApiService) { }
+        private api: ApiService,
+        ) { }
 
     ngOnInit() {
         this.characterId = this.activatedRoute.snapshot.paramMap.get('id');
         this.api.getCharacter(this.characterId).subscribe(res => {
             this.character = res[0]; //nao esquecer desse ;
-            //console.log(JSON.stringify(this.characterId.id));
         });
+
     }
     
 }
