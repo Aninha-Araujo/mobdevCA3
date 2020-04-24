@@ -1,21 +1,12 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-buttons slot="start" defaultHref="/tabs/quotes">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-
     <ion-title>Quotes</ion-title>
-
- </ion-toolbar>
+  </ion-toolbar>
 </ion-header>
-
 <ion-content>
     <ion-list>
-
-        <ion-item button detail lines="inset" *ngFor="let quote of 
-        quotes | async" (click)="openDetails(quote)">
-        {{ quote?.quote }}
+        <ion-item button detail lines="inset" *ngFor="let quote of quotes | async" (click)="openDetails(quote)">
+        {{ quote.quote }}
         </ion-item>
-
     </ion-list>
 </ion-content>
