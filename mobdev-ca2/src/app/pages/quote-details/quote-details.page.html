@@ -6,15 +6,20 @@
 	<ion-title> Quote Details </ion-title>
 	</ion-toolbar>
 </ion-header>
+
 <ion-content padding>
 
 	<ion-card *ngIf="quote">
-		<ion-list>
-			<ion-item button detail lines="inset" *ngFor="let quote of quotes | async" (click)="openDetails(quote)">
-				{{ quote?.author }}
-			</ion-item>
-		</ion-list>
-	</ion-card>
+		
+		
+			<ion-card-header color="primary"> {{ quote.quote_id }} </ion-card-header>
+			<ion-item class="movie-info" lines="none">
+				<ion-icon name="flask" slot="start"></ion-icon>
+				Author: {{ quote.author }}
+			</ion-item>			
 
+		          
+		
+	</ion-card>
 </ion-content>
 
