@@ -22,7 +22,7 @@ export class ApiService {
         return this.http.get('https://https://breakingbadapi.com/api/quotes');
     }
     getQuote(id) {
-        return this.http.get(`https://breakingbadapi.com/api/${id}`);
+        return this.http.get(`https://breakingbadapi.com/api/quotes/${id}`);
     }
     getDeaths() {
         return this.http.get('https://breakingbadapi.com/api/deaths');

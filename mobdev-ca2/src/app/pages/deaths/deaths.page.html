@@ -6,7 +6,7 @@
 
 <ion-content>
     <ion-list>
-        <ion-item button detail lines="inset" *ngFor="let death of deaths | async" (click)="openDetails(deaths)">
+        <ion-item button detail lines="inset" *ngFor="let death of deaths | async" (click)="openDetails(deaths)"> 
         {{ death.death}}
         </ion-item>
     </ion-list>

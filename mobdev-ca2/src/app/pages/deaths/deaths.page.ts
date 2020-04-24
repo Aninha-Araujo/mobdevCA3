@@ -20,10 +20,10 @@ export class DeathsPage implements OnInit {
          console.log('my deaths: ',data);
     });
   }
-  openDetail(deaths){
+  /*openDetail(deaths){
       let death_count = name;
-      this.router.navigateByUrl('/tabs/deaths/${death}');
-  }
+      this.router.navigateByUrl('/tabs/deaths/${deathId}');
+  }*/
 }
 
 
