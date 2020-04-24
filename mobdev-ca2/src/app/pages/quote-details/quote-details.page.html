@@ -11,9 +11,10 @@
 	<ion-card *ngIf="quote">
 		<ion-list>
 			<ion-item button detail lines="inset" *ngFor="let quote of quotes | async" (click)="openDetails(quote)">
-				{{ quote.author }}
+				{{ quote?.author }}
 			</ion-item>
 		</ion-list>
 	</ion-card>
 
 </ion-content>
+
