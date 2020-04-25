@@ -4,16 +4,16 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
-    <ion-list>
-        <ion-item *ngFor="let death of deaths | async" > 
-                
-        <ion-label text-wrap>
-					<h2> {{ death.death }} </h2>
-					<h6>Responsible:{{ death.responsible }}</h6>
-        </ion-label>            
-				
-        </ion-item>
-    </ion-list>
+  <ion-searchbar name="search" [(ngModel)]="search"  cancelButtonText="Cancel"></ion-searchbar>
+  <ion-list>
+    <div *ngFor="let death of deaths | async">
+      <ion-item *ngIf="filter(death)">
+      <p>{{ death.death }}</p>
+    </ion-item>
+    </div>
+    
+  </ion-list> 
 </ion-content>
 
