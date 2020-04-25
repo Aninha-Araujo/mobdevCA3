@@ -16,14 +16,7 @@ export class DeathsPage implements OnInit {
   
   ngOnInit() {
        this.deaths = this.api.getDeaths();
-      this.deaths.subscribe(data => {
-         console.log('my deaths: ',data);
-    });
+         this.router.navigateByUrl(`/tabs/deaths}`);
+    
   }
-  /*openDetail(deaths){
-      let death_count = name;
-      this.router.navigateByUrl('/tabs/deaths/${deathId}');
-  }*/
 }
-
-

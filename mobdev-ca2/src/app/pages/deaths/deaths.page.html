@@ -6,8 +6,13 @@
 
 <ion-content>
     <ion-list>
-        <ion-item button detail lines="inset" *ngFor="let death of deaths | async" (click)="openDetails(deaths)"> 
-        {{ death.death}}
+        <ion-item *ngFor="let death of deaths | async" > 
+                
+        <ion-label text-wrap>
+					<h2> {{ death.death }} </h2>
+					<h6>Responsible:{{ death.responsible }}</h6>
+        </ion-label>            
+				
         </ion-item>
     </ion-list>
 </ion-content>
