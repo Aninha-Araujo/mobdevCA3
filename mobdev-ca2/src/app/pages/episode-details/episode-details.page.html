@@ -29,14 +29,15 @@
 
 <!--
 
-<div ng-controller="ExampleController">
-  <select ng-model="selection" ng-options="item for item in items">
+<div ng-controller="">
+  <select ng-model="season" ng-options="season for item in seasons">
   </select>
-  <code>selection={{selection}}</code>
+  <code>season={{season}}</code>
   <hr/>
   <div class="animate-switch-container"
-    ng-switch on="selection">
-      <div class="animate-switch" ng-switch-when="settings|options" ng-switch-when-separator="|">Settings Div</div>
+    ng-switch on="sSeasonPicture">
+      <div class="animate-switch" ng-switch-when="settings|options" 
+      ng-switch-when-separator="|">Settings Div</div>
       <div class="animate-switch" ng-switch-when="home">Home Span</div>
       <div class="animate-switch" ng-switch-default>default</div>
   </div>
