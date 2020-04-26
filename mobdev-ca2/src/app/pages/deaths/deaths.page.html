@@ -6,11 +6,12 @@
 
 
 <ion-content>
-  <ion-searchbar name="search" [(ngModel)]="search"  cancelButtonText="Cancel"></ion-searchbar>
+  <ion-searchbar name="search" [(ngModel)]="search" placeholder="Search by Responsible" cancelButtonText="Cancel"></ion-searchbar>
   <ion-list>
     <div *ngFor="let death of deaths | async">
       <ion-item *ngIf="filter(death)">
-      <p>{{ death.death }}</p>
+      <p> <ion-icon name="skull" slot="start"></ion-icon> {{ death.death }} 
+      <ion-icon name="person-add" slot="start"></ion-icon> {{death.number_of_deaths}} </p>
     </ion-item>
     </div>
     

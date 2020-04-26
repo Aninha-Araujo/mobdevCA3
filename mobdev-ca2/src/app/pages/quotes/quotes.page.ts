@@ -14,7 +14,7 @@ export class QuotesPage implements OnInit {
 
     
     quotes: Observable<any>;
-
+    search:any = "";
     constructor(private router: Router, private api: ApiService) { }
 
     ngOnInit() {
@@ -29,5 +29,9 @@ export class QuotesPage implements OnInit {
         let quoteId = quote.quote_id;  
         this.router.navigateByUrl(`/tabs/quotes/${quote.id}`);
     }
+    filter(quote){
+    // console.log(death.author);
+    return quote.author.toLowerCase().indexOf(this.search.toLowerCase()) != -1;
+  }
 }
 

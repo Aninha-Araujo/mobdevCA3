@@ -4,9 +4,13 @@
 	</ion-toolbar>
 </ion-header>
 <ion-content>
-	<ion-list>
-		<ion-item button detail lines="inset" *ngFor="let quote of quotes | async" (click)="openDetails(quote)">
-			{{ quote?.quote }}
-		</ion-item>
-	</ion-list>
+  <ion-searchbar name="search" [(ngModel)]="search" placeholder="Search by Author" cancelButtonText="Cancel"></ion-searchbar>
+  <ion-list>
+    <div *ngFor="let quote of quotes | async">
+      <ion-item *ngIf="filter(quote)">
+      <p>{{ quote.quote }}</p>
+    </ion-item>
+    </div>
+    
+  </ion-list> 
 </ion-content>
