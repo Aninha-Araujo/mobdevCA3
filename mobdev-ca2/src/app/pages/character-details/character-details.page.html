@@ -11,16 +11,32 @@
 	<ion-card *ngIf="character">
 		
 		
-			<ion-card-header color="primary"> {{ character.name }}</ion-card-header>
-			<ion-item class="movie-info" lines="none">
+			<ion-card-header color="primary"> {{ character.name }}
+
+            <div>
+			 <ion-buttons slot="end">
+                <ion-button (click)="unfavouriteCharacter()" *ngIf="isFavouriteCharacters">
+                <ion-icon name="star" slot="icon-only" color="secondary"></ion-icon>
+                 </ion-button>
+                <ion-button (click)="favouriteCharacter()" *ngIf="!isFavouriteCharacters">
+                 <ion-icon name="star-outline" slot="icon-only" color="secondary"></ion-icon>
+                </ion-button>
+             </ion-buttons>
+            </div>
+            <p align="center"><img [src]="character.img" width="180" height="180" class="info-img"></p>
+            </ion-card-header>
+
+
+            
+            <ion-item class="movie-info" lines="none">
 				<ion-icon name="flask" slot="start"></ion-icon>
-				Nickname: {{ character.occupation }}
+				Occupation: {{ character.occupation }}
 			</ion-item>			
 			<ion-item class="movie-info" lines="none">
 				<ion-icon name="finger-print" slot="start"></ion-icon>
 				Nickname: {{ character.nickname }}
 			</ion-item>
-            <p align="center"><img [src]="character.img" width="180" height="180" class="info-img"></p>
+            
 			<ion-item class="movie-info" lines="none">
 				<ion-icon name="pulse" slot="start"></ion-icon>
 				Status: {{ character.status }}
