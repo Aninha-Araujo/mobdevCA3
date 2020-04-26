@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { ApiService } from '../../services/api.service';
+import { ApiService } from './../../services/api.service';
 
 @Component({
     selector: 'app-quote-details',
@@ -20,7 +20,7 @@ export class QuoteDetailsPage implements OnInit {
     ngOnInit() {
         this.quoteId = this.activatedRoute.snapshot.paramMap.get('id');
         this.api.getQuote(this.quoteId).subscribe(res => {
-            this.quote = res[0]; //nao esquecer desse ;
+            this.quote = res[0]; 
         });
     }
         

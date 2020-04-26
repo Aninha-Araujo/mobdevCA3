@@ -27,10 +27,10 @@ export class QuotesPage implements OnInit {
 
     openDetails(quote) {
         let quoteId = quote.quote_id;  
-        this.router.navigateByUrl(`/tabs/quotes/${quote.id}`);
+        this.router.navigateByUrl(`/tabs/quotes/${quoteId}`);
     }
     filter(quote){
-    // console.log(death.author);
+   
     return quote.author.toLowerCase().indexOf(this.search.toLowerCase()) != -1;
   }
 }

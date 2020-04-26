@@ -3,11 +3,12 @@
 		<ion-title>Quotes</ion-title>
 	</ion-toolbar>
 </ion-header>
+
 <ion-content>
   <ion-searchbar name="search" [(ngModel)]="search" placeholder="Search by Author" cancelButtonText="Cancel"></ion-searchbar>
   <ion-list>
     <div *ngFor="let quote of quotes | async">
-      <ion-item *ngIf="filter(quote)">
+      <ion-item *ngIf="filter(quote)" button detail lines="inset" (click)= "openDetails(quote)" >
       <p> {{ quote.quote }} </p>
     </ion-item>
     </div>

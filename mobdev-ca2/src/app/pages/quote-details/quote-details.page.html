@@ -1,25 +1,34 @@
 <ion-header>
 	<ion-toolbar color="primary">
 		<ion-buttons slot="start">
-            <ion-back-button defaulthref="/tabs/quotes"></ion-back-button>
-        </ion-buttons>
-	<ion-title> Quote Details </ion-title>
+			<ion-back-button defaulthref="/tabs/quotes"></ion-back-button>
+		</ion-buttons>
+		<ion-title> Quote Details </ion-title>
 	</ion-toolbar>
 </ion-header>
 
 <ion-content padding>
 
 	<ion-card *ngIf="quote">
-		
-		
-			<ion-card-header color="primary"> {{ quote.quote_id }} </ion-card-header>
-			<ion-item class="movie-info" lines="none">
-				<ion-icon name="flask" slot="start"></ion-icon>
-				Author: {{ quote.author }}
-			</ion-item>			
 
-		          
-		
+
+		<ion-card-header color="primary"> {{ quote.quote}} </ion-card-header>
+
+
+		<ion-item class="movie-info" lines="none">
+			<ion-icon name="flask" slot="start"></ion-icon>
+			Author: {{ quote.author }}
+		</ion-item>
+
+		<ion-item class="movie-info" lines="none">
+			<ion-icon name="flask" slot="start"></ion-icon>
+			Author: {{ quote.author }}
+		</ion-item>
+
+		<ion-item class="movie-info" lines="none">
+			<ion-icon name="flask" slot="start"></ion-icon>
+			Author: {{ quote.author }}
+		</ion-item>
+        
 	</ion-card>
 </ion-content>
-
