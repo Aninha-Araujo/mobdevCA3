@@ -14,13 +14,13 @@ export class QuotesPage implements OnInit {
 
     
     quotes: Observable<any>;
-    search:any = "";
+    search: any = "";
     constructor(private router: Router, private api: ApiService) { }
 
     ngOnInit() {
         this.quotes = this.api.getQuotes();
         this.quotes.subscribe(data => {
-        console.log('my data: ', data);
+        console.log('my quote: ', data);
         });
     }
 

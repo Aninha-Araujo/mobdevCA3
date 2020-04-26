@@ -8,7 +8,7 @@
   <ion-list>
     <div *ngFor="let quote of quotes | async">
       <ion-item *ngIf="filter(quote)">
-      <p>{{ quote.quote }}</p>
+      <p> {{ quote.quote }} </p>
     </ion-item>
     </div>
     
