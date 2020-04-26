@@ -22,6 +22,7 @@ export class QuoteDetailsPage implements OnInit {
         this.api.getQuote(this.quoteId).subscribe(res => {
             this.quote = res[0]; 
         });
+
     }
         
  }
