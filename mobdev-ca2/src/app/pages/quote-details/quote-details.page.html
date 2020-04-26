@@ -12,18 +12,19 @@
 	<ion-card *ngIf="quote">
 
 
-		<ion-card-header color="primary"> {{ quote.quote}} </ion-card-header>
+		<ion-card-header color="primary"> {{ quote.quote}} 
 
 
-		<ion-item class="movie-info" lines="none">
+		<div class="movie-info" lines="none">
 			<ion-icon name="person" slot="start"></ion-icon>
 			Author: {{ quote.author }}
-		</ion-item>
+		</div>
 
-		<ion-item class="movie-info" lines="none">
+		<div class="movie-info" lines="none">
 			<ion-icon name="tv" slot="start"></ion-icon>
 			Author: {{ quote.series}}
-		</ion-item>
-       
+		</div>
+
+       </ion-card-header>
 	</ion-card>
 </ion-content>
